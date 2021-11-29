@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    Danh sách người dùng
+  </div>
+  Chon size anh:
+  <app-message [message]="txt"></app-message>
+  <input type="checkbox">60px
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tuổi</th>
+        <th scope="col">Địa chỉ</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let user of users; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.name }}</td>
+        <td><img [width]="size" [src]="user.avatar" alt=""></td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.address }}</td>
+        <td>
+          <button (click)="removeUser(i)">Delete</button></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
